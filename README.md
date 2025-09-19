@@ -9,8 +9,8 @@ This project implements a classic, robust ELT (Extract, Load, Transform) archite
 ```
 ┌───────────────┐      ┌───────────────┐      ┌────────────────┐      ┌───────────────┐
 │               │      │               │      │                │      │               │
-│  Amazon S3    ├─────►│   Fivetran    ├─────►│   Snowflake    ├◄─────►│   dbt Core    │
-│ (Data Lake)   │      │ (Ingestion)   │      │ (Data Warehouse) │      │(Transformation)│
+│  Amazon S3    ├─────►│   Fivetran    ├─────►│   Snowflake    ├◄────►│  dbt Core     │
+│ (Data Lake)   │      │ (Ingestion)   │      │(Data Warehouse)│      │Transformation │
 │               │      │               │      │                │      │               │
 └───────────────┘      └───────────────┘      └────────────────┘      └───────────────┘
 ```
@@ -88,4 +88,4 @@ The following diagram shows the flow of data from the raw sources through the st
 ![Data Lineage Graph](Images/dbt_lineage_graph.png)
 ![Snowflake](Images/snowflake.png)
 ![DBT_DB](Images/dbt_DB.png)
-```
+
