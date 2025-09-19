@@ -84,7 +84,7 @@ To reproduce this project, you will need accounts for AWS, Fivetran, and Snowfla
 The following diagram shows the flow of data from the raw sources through the staging and intermediate models.
 
 
-
+![Fivetran](Images/Fivetran.png)
 ![Data Lineage Graph](Images/dbt_lineage_graph.png)
 ![Snowflake](Images/snowflake.png)
 ![DBT_DB](Images/dbt_DB.png)
