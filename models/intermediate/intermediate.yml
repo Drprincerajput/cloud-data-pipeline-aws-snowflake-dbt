@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: int_date_spine
+    description: >
+      Creates a continuous calendar spine with one row for each day 
+      within the date range of the sales data. This is crucial for 
+      ensuring that time-series analysis does not have gaps on days 
+      with no sales.
+    columns:
+      - name: date_day
+        description: "A single date, representing one day in the spine."
+
+
+  - name: int_sales_aggregated_to_daily
+    description: >
+      Aggregates the raw transactional sales data from the staging layer 
+      into a daily summary. It calculates the total quantity sold for 
+      each product on each day.
+    columns:
+      - name: order_date
+        description: "The date of the aggregated sales."
+      - name: product_id
+        description: "The unique identifier for the product being sold."
+      - name: total_quantity
+        description: "The sum of all quantities sold for a given product on a given day."
+
+  - name: int_daily_sales
+    description: >
+      Builds upon the daily aggregated sales by joining with the date spine. 
+      This model ensures that every product has a row for every single day 
+      in the analysis period, filling in days with no sales as zero.
+    columns:
+      - name: date_day
+        description: "The date for the sales record. Guaranteed to be continuous."
+      - name: product_id
+        description: "The unique identifier for the product."
+      - name: quantity
+        description: "The total quantity sold for that product on that day. Will be 0 for days with no sales."
+      - name: unique_key
+        description: "A composite key of date and product ID to ensure uniqueness."
+

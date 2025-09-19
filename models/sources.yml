@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: s3_source
+    description: "Raw data loaded from the S3 bucket via Fivetran."
+    database: FIVETRAN_DATABASE
+    schema: S3
+    
+    tables:
+      - name: raw_sales
+        description: "Raw sales transaction data from the raw_sales.csv file."
+
+      - name: raw_products
+        description: "Raw product catalog data from the raw_products.csv file."
+
+      - name: raw_marketing_events
+        description: "Raw marketing event data from the raw_marketing_events.csv file."

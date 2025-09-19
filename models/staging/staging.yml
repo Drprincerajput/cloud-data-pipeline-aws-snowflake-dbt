@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_sales
+    description: "Staging model for raw sales transactions. Cleans and standardizes columns."
+    columns:
+      - name: order_id
+        description: "The unique identifier for an order."
+        tests:
+          - not_null
+
+
+  - name: stg_products
+    description: "Staging model for the raw product catalog."
+    columns:
+      - name: product_id
+        description: "The unique identifier for a product."
+        tests:
+          - not_null
+
+
+  - name: stg_marketing_events
+    description: "Staging model for marketing and holiday events."
+    columns:
+      - name: event_date
+        description: "The date of the event."
+        tests:
+          - not_null
