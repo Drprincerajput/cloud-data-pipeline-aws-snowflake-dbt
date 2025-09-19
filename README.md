@@ -88,4 +88,5 @@ The following diagram shows the flow of data from the raw sources through the st
 ![Data Lineage Graph](Images/dbt_lineage_graph.png)
 ![Snowflake](Images/snowflake.png)
 ![DBT_DB](Images/dbt_DB.png)
+![Fivetran](Images/Fivetran.png)
 ```
